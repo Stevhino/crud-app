@@ -1,7 +1,8 @@
 const addEmployeeForm = document.getElementById("addEmployeeForm");
 const tableBody = document.getElementById("tbody-employee");
+const profileImageInput = document.getElementById("profileImage");
 
-const apiURL = "https://662b690ade35f91de15829b1.mockapi.io/api/v1/employee/";
+const apiURL = "http://localhost:3000/employees";
 
 function displayData(data) {
   tableBody.innerHTML = "";
@@ -15,14 +16,15 @@ function displayData(data) {
                     <td>${item.firstName}</td>
                     <td>${item.lastName}</td>
                     <td>${item.age}</td>
-                    <td><img class="img-thumbnail" src="${item.profileImage}" alt="_blank" /></td>
-                    <td><button class="btn btn-primary rounded-0 btn-edit input-pointer" data-id="${item.id}">Edit</button></td>
-                    <td><button class="btn btn-danger rounded-0 btn-delete input-pointer" data-id="${item.id}">Delete</button></td>
+                    <td><img class="img-thumbnail" src="${item.profileImage}" alt="Profile Image" style="width: 100px; height: 100px;" /></td>
+                    <td style="text-align: center; vertical-align: middle;"><button class="btn btn-primary rounded-0 btn-edit input-pointer" data-id="${item.id}">Edit</button></td>
+                    <td style="text-align: center; vertical-align: middle;"><button class="btn btn-danger rounded-0 btn-delete input-pointer" data-id="${item.id}">Delete</button></td>
                 </tr>`;
       tableBody.insertAdjacentHTML("beforeend", row);
     });
   }
 }
+
 function addEmployee(e) {
   e.preventDefault();
 
