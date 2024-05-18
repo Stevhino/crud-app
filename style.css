@@ -1,4 +1,7 @@
-
 .input-pointer {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.input-pointer1 {
+  cursor: progress;
 }
